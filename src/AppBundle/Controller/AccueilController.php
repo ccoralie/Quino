@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Diapo_Accueil;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,9 +14,10 @@ class AccueilController extends Controller
      */
     public function AccueilAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('Accueil/Accueil.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        $em = $this->getDoctrine()->getManager();
+        $diapos = $em->getRepository(Diapo_Accueil::class)->findAll();
+        return $this->render('Accueil/Accueil.html.twig', array(
+            'diapos' => $diapos
+        ));
     }
 }

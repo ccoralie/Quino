@@ -7,7 +7,7 @@ Encore
     // will output as web/build/main.css
     .addEntry('main', './assets/scss/main.scss')
 
-
+    .addEntry('dashboard', './assets/scss/dashboard.scss')
 
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
