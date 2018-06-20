@@ -16,7 +16,7 @@ class Carte
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie", inversedBy="carte")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $categories;
+    private $categorie;
 
 
     /**
@@ -185,5 +185,29 @@ class Carte
     public function getCategories()
     {
         return $this->categories;
+    }
+
+    /**
+     * Set categorie.
+     *
+     * @param \AppBundle\Entity\Categorie $categorie
+     *
+     * @return Carte
+     */
+    public function setCategorie(\AppBundle\Entity\Categorie $categorie)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie.
+     *
+     * @return \AppBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }
