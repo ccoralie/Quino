@@ -1,1 +1,4 @@
-{}
+{
+  "web/dashboard.js": "/web/dashboard.js",
+  "web/dashboard.css": "/web/dashboard.css"
+}
