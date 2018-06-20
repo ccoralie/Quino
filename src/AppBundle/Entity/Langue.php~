@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Langue
 {
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="langue")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Article", mappedBy="langue")
      */
     private $articles;
 
@@ -128,5 +128,48 @@ class Langue
     public function getAbreviation()
     {
         return $this->abreviation;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->articles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add article.
+     *
+     * @param \AppBundle\Entity\Flight $article
+     *
+     * @return Langue
+     */
+    public function addArticle(\AppBundle\Entity\Flight $article)
+    {
+        $this->articles[] = $article;
+
+        return $this;
+    }
+
+    /**
+     * Remove article.
+     *
+     * @param \AppBundle\Entity\Flight $article
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeArticle(\AppBundle\Entity\Flight $article)
+    {
+        return $this->articles->removeElement($article);
+    }
+
+    /**
+     * Get articles.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArticles()
+    {
+        return $this->articles;
     }
 }

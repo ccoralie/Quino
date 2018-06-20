@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Articles
+ * Article
  *
  * @ORM\Table(name="articles")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticlesRepository")
  */
-class Articles
+class Article
 {
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Langue", inversedBy="articles")
@@ -59,7 +59,7 @@ class Articles
      *
      * @param string $titre
      *
-     * @return Articles
+     * @return Article
      */
     public function setTitre($titre)
     {
@@ -83,7 +83,7 @@ class Articles
      *
      * @param string $contenu
      *
-     * @return Articles
+     * @return Article
      */
     public function setContenu($contenu)
     {
@@ -107,7 +107,7 @@ class Articles
      *
      * @param \AppBundle\Entity\Langue $langue
      *
-     * @return Articles
+     * @return Article
      */
     public function setLangue(\AppBundle\Entity\Langue $langue)
     {
