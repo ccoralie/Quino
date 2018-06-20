@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Categorie
 {
     /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Carte", inversedBy="categories")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $carte;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
