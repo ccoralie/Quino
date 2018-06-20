@@ -4,6 +4,7 @@ Encore
     .setOutputPath('web/build/')
     .setPublicPath('/web')
     .addEntry('login', './assets/scss/login.scss')
+    .addEntry('dashboard', './assets/scss/dashboard.scss')
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableSassLoader()
