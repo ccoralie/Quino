@@ -13,10 +13,10 @@ use Doctrine\ORM\Mapping as ORM;
 class Categorie
 {
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Carte", inversedBy="categories")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Carte", mappedBy="categorie")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $carte;
+    private $cartes;
 
     /**
      * @var int
@@ -91,5 +91,48 @@ class Categorie
     public function getCarte()
     {
         return $this->carte;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cartes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add carte.
+     *
+     * @param \AppBundle\Entity\Carte $carte
+     *
+     * @return Categorie
+     */
+    public function addCarte(\AppBundle\Entity\Carte $carte)
+    {
+        $this->cartes[] = $carte;
+
+        return $this;
+    }
+
+    /**
+     * Remove carte.
+     *
+     * @param \AppBundle\Entity\Carte $carte
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeCarte(\AppBundle\Entity\Carte $carte)
+    {
+        return $this->cartes->removeElement($carte);
+    }
+
+    /**
+     * Get cartes.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCartes()
+    {
+        return $this->cartes;
     }
 }
