@@ -3,6 +3,12 @@ var Encore = require('@symfony/webpack-encore');
 Encore
     .setOutputPath('web/build/')
     .setPublicPath('/web')
+
+    // will output as web/build/main.css
+    .addEntry('main', './assets/scss/main.scss')
+
+
+
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableSassLoader()
