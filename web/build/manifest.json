@@ -1,1 +1,4 @@
-{}
+{
+  "web/login.js": "/web/login.js",
+  "web/login.css": "/web/login.css"
+}
