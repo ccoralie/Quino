@@ -13,10 +13,10 @@ use Doctrine\ORM\Mapping as ORM;
 class Categorie
 {
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Carte", inversedBy="categories")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Carte", mappedBy="categorie")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $carte;
+    private $cartes;
 
     /**
      * @var int
@@ -67,5 +67,29 @@ class Categorie
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Set carte.
+     *
+     * @param \AppBundle\Entity\Carte $carte
+     *
+     * @return Categorie
+     */
+    public function setCarte(\AppBundle\Entity\Carte $carte)
+    {
+        $this->carte = $carte;
+
+        return $this;
+    }
+
+    /**
+     * Get carte.
+     *
+     * @return \AppBundle\Entity\Carte
+     */
+    public function getCarte()
+    {
+        return $this->carte;
     }
 }
