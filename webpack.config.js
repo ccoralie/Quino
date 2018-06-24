@@ -4,10 +4,10 @@ Encore
     .setOutputPath('web/build/')
     .setPublicPath('/web')
 
-    // will output as web/build/main.css
-    .addEntry('main', './assets/scss/main.scss')
+    // Crée son jumeau sous ce lien : css/web/build/main.css
+    .addEntry('css/main', './assets/scss/main.scss')
 
-    .addEntry('dashboard', './assets/scss/dashboard.scss')
+    .addEntry('css/dashboard', './assets/scss/dashboard.scss')
 
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
