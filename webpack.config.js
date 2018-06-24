@@ -4,6 +4,8 @@ Encore
     .setOutputPath('web/build/')
     .setPublicPath('/web')
 
+    .addEntry('js/app', './assets/js/app.js')
+
     .addEntry('dashboard', './assets/scss/dashboard.scss')
 
     // Transfert des css dans build/css (il faudra ajuster les liens pour dashboard.css et supprimer celui ci-dessus
@@ -24,10 +26,12 @@ Encore
 
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
-    .enableSassLoader()
+
+
     .enableSassLoader(function(sassOptions) {}, {
         resolveUrlLoader: false
     })
+
     .autoProvidejQuery();
 
 module.exports = Encore.getWebpackConfig();
