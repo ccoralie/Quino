@@ -7,16 +7,18 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
 /* --- HEADER --- */
 
+
 @font-face {
   font-family: 'NillandRegular';
-  src: url('/assets/fonts/nilland-webfont.eot');
-  src: url('/assets/fonts/nilland-webfont.eot?iefix') format('eot'),
-  url('/assets/fonts/nilland-webfont.woff') format('woff'),
-  url('/assets/fonts/nilland-webfont.ttf') format('truetype'),
-  url('/assets/fonts/nilland-webfont.svg#webfontqDYumM6C') format('svg');
+  src: url('../fonts/nilland-webfont.eot'),
+  url('../fonts/nilland-webfont.eot?iefix') format('eot'),
+  url('../fonts/nilland-webfont.woff') format('woff'),
+  url('../fonts/nilland-webfont.ttf') format('truetype'),
+  url('../fonts/nilland-webfont.svg#webfontqDYumM6C') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
 
 body {
   background-color: #564438;
@@ -52,6 +54,7 @@ body {
 
 /* carré */
 .nav-trigger{
+  z-index: 1000;
   cursor:pointer;
   left:50%;
   position:absolute;
@@ -149,9 +152,10 @@ img.img-responsive.logo{
 
 /*nav principale grand fond*/
 .main-nav{
+  z-index: 900;
   background: #5a8079 url("http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529834661/FOND_e0p7io.png");
   background-size: 1050px;
-  font-family: 'Nilland',sans-serif;
+  font-family: "NillandRegular";
   left:0;
   position:fixed;
   width:100%;
@@ -190,11 +194,11 @@ img.img-responsive.logo{
 
 /* ORNEMENT LOGO */
 .main-nav .main-nav-inner .main-nav-close{
-  margin: 20px auto 25px;
+  margin: 30px auto 25px;
   text-align: center;
   outline:none!important;
   position:relative;
-  width:100px
+  width:150px
 }
 
 .main-nav .main-nav-inner .main-nav-close:after{
@@ -229,7 +233,7 @@ img.img-responsive.logo{
 }
 
 .main-nav .main-nav-inner .main-nav-close button img{
-  width:150%
+  width:100%
 }
 .main-nav .main-nav-inner .main-nav-close button:hover{
   filter:alpha(opacity=50);
@@ -307,7 +311,6 @@ body.nav-visible .main-nav{
 
 button.close{
   color:#fff;
-  font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size:40px;
   outline:none!important;
   position:absolute;
@@ -330,7 +333,6 @@ button.close:hover{
 footer {
   background: #5a8079 url("http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529834661/FOND_e0p7io.png");
   background-size: 1050px;
-  position: absolute;
   left: 0;
   bottom: 0;
   height: auto;

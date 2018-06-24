@@ -11,6 +11,7 @@ Encore
     // Transfert des css dans build/css (il faudra ajuster les liens pour dashboard.css et supprimer celui ci-dessus
     .addEntry('css/main', './assets/scss/main.scss')
     .addEntry('css/dashboard', './assets/scss/dashboard.scss')
+    .addEntry('css/accueil', './assets/scss/accueil.scss')
 
 
     // Transfert des images dans build/images
