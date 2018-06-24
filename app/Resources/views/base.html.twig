@@ -13,38 +13,41 @@
 </body>
 </html>
 
-<header>
-    {% block header %}
-        <header class="main-header">
-            <div class="main-header-inner clearfix">
-                <div class="nav-trigger" onclick="document.querySelector('body').classList.toggle('nav-visible');">
-                    <div class="fatw-icon"> <!-- LOGO -->
-                        <img class="img-responsive logo"
-                             src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529834963/timbre_kcngj7.png"
-                             alt="fatw">
-                    </div>
-                    <div class="hamburger-icon"><span></span></div>
+{% block header %}
+    <header class="main-header">
+        <div class="main-header-inner clearfix">
+            <div class="nav-trigger" onclick="document.querySelector('body').classList.toggle('nav-visible');">
+                <div class="fatw-icon"> <!-- LOGO -->
+                    <img class="img-responsive logo"
+                         src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529834963/timbre_kcngj7.png"
+                         alt="fatw">
                 </div>
-                <nav class="main-nav">
-                    <div class="main-nav-inner">
-                        <div class="main-nav-close">
-                            <button onclick="document.querySelector('body').classList.toggle('nav-visible');"><img
-                                        src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529838616/ORNEMENT_LOGO_pjr7rt.png"
-                                        alt=""></button>
-                        </div>
-                        <div class="main-nav-site">
-                            <ul>
-                                <li><a href="/accueil">Accueil</a></li>
-                                <li><a href="/carte">La Carte</a></li>
-                                <li><a href="/infos">Infos Pratiques</a></li>
-                                <li><a href="/evenements">Evenements</a></li>
-                                <li><a href="/langues">ENG/SPA</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+                <div class="hamburger-icon"><span></span></div>
             </div>
-        </header>
-    {% endblock header %}
-</header>
+            <nav class="main-nav">
+                <div class="main-nav-inner">
+                    <div class="main-nav-close">
+                        <button onclick="document.querySelector('body').classList.toggle('nav-visible');"><img
+                                    src="http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529838616/ORNEMENT_LOGO_pjr7rt.png"
+                                    alt=""></button>
+                    </div>
+                    <div class="main-nav-site">
+                        <ul>
+                            <li><a href="/accueil">Accueil</a></li>
+                            <li><a href="/carte">La Carte</a></li>
+                            <li><a href="/infos">Infos Pratiques</a></li>
+                            <li><a href="/evenements">Evenements</a></li>
+                            <li><a href="/langues">ENG/SPA</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+{% endblock header %}
+
+
+{% block footer %}
+    <footer><p>blabla</p></footer>
+{% endblock footer %}
