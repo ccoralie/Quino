@@ -21,7 +21,7 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 
 
 body {
-  background-color: #564438;
+  background-color: rgba(38, 26, 14, 0.91);
   padding:0px;
   margin:0px;
   color: white;
@@ -160,7 +160,6 @@ img.img-responsive.logo{
   left:0;
   position:fixed;
   width:100%;
-  z-index:6;
   -webkit-overflow-scrolling:touch;
   -moz-transform:translateY(-125%);
   -moz-transform-origin:left top;
@@ -340,6 +339,10 @@ footer {
   width: 100%;
   color : white;
   text-align: center;
+  p {
+    padding-top: 5px;
+    font-size: medium;
+  }
 }
 
 .facebookIcon {
