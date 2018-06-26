@@ -35,7 +35,7 @@ body,
 .carousel,
 .carousel-inner,
 .carousel-inner .item {
-  height: 100vh;
+  height: 75vh;
   object-fit: cover;
 }
 
@@ -46,7 +46,7 @@ body,
 }
 
 .article {
-  padding: 10vh;
+  padding: 20vh 10vh 20vh 10vh;
   width: 100%;
 }
 
@@ -57,4 +57,23 @@ body,
   h2 {
     text-transform: uppercase;
   }
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }

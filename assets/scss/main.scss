@@ -4,29 +4,40 @@ $brand-primary: darken(#428bca, 20%);
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-
-/* --- HEADER --- */
+/* --- FONTS --- */
 
 
 @font-face {
-  font-family: 'NillandRegular';
-  src: url('../fonts/nilland-webfont.eot'),
-  url('../fonts/nilland-webfont.eot?iefix') format('eot'),
-  url('../fonts/nilland-webfont.woff') format('woff'),
-  url('../fonts/nilland-webfont.ttf') format('truetype'),
-  url('../fonts/nilland-webfont.svg#webfontqDYumM6C') format('svg');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Nilland';
+  src:    url('../fonts/Nilland.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'DINN';
+  src:    url('../fonts/DINNextLTPro-LightCondensed.otf') format('OpenType');
+}
+
+
+/* --- GENERAL --- */
 
 body {
-  background-color: rgba(38, 26, 14, 0.91);
+  background: linear-gradient(to right,#ffffff, #f7ecda);
   padding:0px;
   margin:0px;
-  color: white;
+  color: black;
+  font-family: 'DINN', Helvetica, sans-serif;
 }
 
+p {
+  font-size: 1.5em;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Nilland', Georgia, serif;
+  text-transform: uppercase;
+}
+
+/* --- HEADER --- */
 
 .main-header{
   background: #5a8079 url("http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529834661/FOND_e0p7io.png");
@@ -156,7 +167,7 @@ img.img-responsive.logo{
   z-index: 900;
   background: #5a8079 url("http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529834661/FOND_e0p7io.png");
   background-size: 1050px;
-  font-family: "NillandRegular";
+  font-family: 'Nilland', Georgia, serif ;
   left:0;
   position:fixed;
   width:100%;
@@ -242,7 +253,7 @@ img.img-responsive.logo{
 }
 .main-nav .main-nav-inner .main-nav-site{
   text-transform:uppercase;
-  font-size:22px;
+  font-size:2em;
 }
 .main-nav .main-nav-inner .main-nav-site ul{
   list-style:none;
@@ -340,8 +351,9 @@ footer {
   color : white;
   text-align: center;
   p {
+    font-family: 'Nilland', Georgia, serif;
+    font-size: 1.3em;
     padding-top: 5px;
-    font-size: medium;
   }
 }
 

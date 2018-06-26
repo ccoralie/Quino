@@ -2,7 +2,12 @@ var Encore = require('@symfony/webpack-encore');
 
 Encore
     .setOutputPath('web/build/')
-    .setPublicPath('/web')
+
+    // what's the public path to this directory
+    // the linked resources in generated files (like url to fonts in css files) are relative when I do this.
+    .setPublicPath('../')
+    .setManifestKeyPrefix('build/')
+
 
 
     .addEntry('dashboard', './assets/scss/dashboard.scss')
