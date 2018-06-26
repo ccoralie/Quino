@@ -4,8 +4,15 @@ $brand-primary: darken(#428bca, 20%);
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-/* --- FONTS --- */
 
+/* --- COLORS --- */
+
+$pink : #ea0d83;
+$green : #4a9271;
+$yellow : #ac8100;
+
+
+/* --- FONTS --- */
 
 @font-face {
   font-family: 'Nilland';
@@ -335,8 +342,6 @@ button.close:hover{
   filter:alpha(opacity=75);
   opacity:.75;
   zoom:1}
-
-
 
 
 /* --- FOOTER --- */
