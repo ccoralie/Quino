@@ -1,11 +1,12 @@
 var Encore = require('@symfony/webpack-encore');
 
 Encore
-    .setOutputPath('web/build/')
 
-    // what's the public path to this directory
-    // the linked resources in generated files (like url to fonts in css files) are relative when I do this.
+    // Là où les fichiers sont générés
+    .setOutputPath('web/build/')
+    // racine du projet
     .setPublicPath('../')
+    // Les ressources liées dans les fichiers générés (comme l'URL des polices dans les fichiers CSS, les glyphicons) sont relatives.
     .setManifestKeyPrefix('build/')
 
 
