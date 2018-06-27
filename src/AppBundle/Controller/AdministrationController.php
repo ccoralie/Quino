@@ -32,10 +32,28 @@ class AdministrationController extends Controller
     }
 
     /**
-     * @route("carte/plats/", name="plats_list")
+     * @route("carte/plats", name="carte_plats")
      */
 
-    public function ListPlatsCarteAction(Request $request)
+    public function listPlatsCarteAction(Request $request)
+    {
+
+    }
+
+    /**
+     * @route("carte/image", name="carte_images")
+     */
+
+    public function imagesCarteAction(Request $request)
+    {
+
+    }
+
+    /**
+     * @route("carte/image", name="carte_images")
+     */
+
+    public function imagesCarteAction(Request $request)
     {
 
     }
