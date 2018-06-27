@@ -1,0 +1,8 @@
+{% extends 'Administration/AdminLayout.html.twig' %}
+{% block content %}
+
+    <h1>Votre Collection</h1>
+    {% for diapo in diapos %}
+        <figure>{{ diapo }}</figure>
+    {% endfor %}
+{% endblock %}
