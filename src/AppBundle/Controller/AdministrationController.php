@@ -9,11 +9,12 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Diapo_Accueil;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 /**
- * @route("/admin")
+ * @route("admin")
  *
  */
 
@@ -50,12 +51,16 @@ class AdministrationController extends Controller
     }
 
     /**
-     * @route("Acceuil/Diapo", name="acceuil_diapo")
+     * @route("/Accueil/Diapos", name="accueil_diapo")
      */
 
-    public function diapoAcceuilAction(Request $request)
+    public function diapoAccueilAction(Request $request)
     {
-
+        $em = $this->getDoctrine()->getManager();
+        $diapos = $em->getRepository(Diapo_Accueil::class)->findAll();
+        return $this->render('Administration/diapoaccueilAdmin/index.html.twig', array(
+            'diapos' => $diapos
+        ));
     }
 
     /**
