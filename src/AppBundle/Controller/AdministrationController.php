@@ -50,10 +50,46 @@ class AdministrationController extends Controller
     }
 
     /**
-     * @route("carte/image", name="carte_images")
+     * @route("Acceuil/Diapo", name="acceuil_diapo")
      */
 
-    public function imagesCarteAction(Request $request)
+    public function diapoAcceuilAction(Request $request)
+    {
+
+    }
+
+    /**
+     * @route("Acceuil/Articles", name="acceuil_articles")
+     */
+
+    public function articleAcceuilAction(Request $request)
+    {
+
+    }
+
+    /**
+     * @route("Info", name="infos")
+     */
+
+    public function InfoAction(Request $request)
+    {
+
+    }
+
+    /**
+     * @route("multilingue/ajouter", name="carte_images")
+     */
+
+    public function ajouterMultilingueAction(Request $request)
+    {
+
+    }
+
+    /**
+     * @route("multilingue/editer", name="carte_images")
+     */
+
+    public function editerMultilingueAction(Request $request)
     {
 
     }
