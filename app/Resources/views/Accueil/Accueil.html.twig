@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/accueil.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="active item"><img
+                        src="http://res.cloudinary.com/tiffanym/image/upload/q_70/v1529954170/bjorn-radestrom-646516-unsplash_b5ya3e.jpg"/>
+            </div>
+            <div class="item"><img
+                        src="http://res.cloudinary.com/tiffanym/image/upload/q_70/v1529954200/edgar-castrejon-459818-unsplash_vnxyyn.jpg"/>
+            </div>
+            <div class="item"><img
+                        src="http://res.cloudinary.com/tiffanym/image/upload/q_70/a_0/v1529954217/edgar-castrejon-459822-unsplash_irxu04.jpg"/>
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+
+    <div class="row article">
+<div class="col-md-1"></div>
+        <div class="col-xs-12 col-md-4 illustration"><img
+                    src="http://res.cloudinary.com/tiffanym/image/upload/v1529954165/edgar-castrejon-459814-unsplash_wiayi5.jpg"
+                    alt="food" style="width:100%;"></div>
+        <div class="col-xs-12 col-md-6 texteArticle">
+            <h1 class="text-center">Présentation</h1><br>
+            <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                exercitationem ullam corporis suscipit ?"</p>
+        </div>
+    </div>
+{% endblock %}
