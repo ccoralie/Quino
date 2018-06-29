@@ -1,9 +1,8 @@
 /* --- COLORS --- */
 
-$pink : #ea0d83;
-$green : #4a9271;
-$yellow : #ac8100;
-
+$pink: #ea0d83;
+$green: #4a9271;
+$yellow: #ac8100;
 
 /* --- CAROUSEL --- */
 
@@ -48,7 +47,6 @@ body,
   object-fit: cover;
 }
 
-
 /* --- ARTICLE --- */
 
 .illustration img {
@@ -72,10 +70,7 @@ body,
   }
 }
 
-/* ALGEMEEN*/
-body {
-  line-height: 24px;
-  text-align: center;}
+/* --- V2 de l'accueil (ma favorite) --- */
 
 /* HEADER*/
 header {
@@ -89,23 +84,33 @@ header {
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
-  color: $green;}
+  color: $green;
+}
 
 .hoofding {
-  width: 100%;}
+  width: 100%;
+}
 
-/* WITTE TEKSTVLAKKEN*/
+/* TEXTEEEEEEEE */
 
-.wittetekstvlakken {
-  width: 75%;
-  margin: 0 auto;}
+.texte {
+  width: 50%;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: justify;
+  }
+}
 
-/* Parallax windows*/
+/* PARALLALALALALAX */
 
 .paralaxtext {
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 100px;}
+  padding: 100px;
+}
 
 .paralax1 {
   background: url(http://res.cloudinary.com/tiffanym/image/upload/q_70/a_0/v1529954217/edgar-castrejon-459822-unsplash_irxu04.jpg) 50% 0 no-repeat fixed;
@@ -117,7 +122,8 @@ header {
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
-  color: $green;}
+  color: $green;
+}
 
 .paralax2 {
   background: url(http://res.cloudinary.com/tiffanym/image/upload/q_100/v1530131132/menu_h63eav.jpg) no-repeat fixed;
@@ -129,37 +135,8 @@ header {
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
-  color: $green;}
-
-/* tekstdelen */
-
-/* mouse anaimtion
-
-.mouse {
-  width: 22px;
-  position: absolute;
-  height: 42px;
-  border-radius: 15px;
-  border: 2px solid white;
-  bottom: 40px;
-  left: 50%;
-  margin-left: -12px;
+  color: $green;
 }
-
-.scroll {
-  display: block;
-  margin: 6px auto;
-  width: 3px;
-  height: 3px;
-  border-radius: 4px;
-  background: white;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: scroll;
-  animation-name: scroll;
-}  */
 
 @keyframes scroll {
   0% {
@@ -173,7 +150,6 @@ header {
     transform: translateY(20px);
   }
 }
-
 
 @-webkit-keyframes scroll {
   0% {
