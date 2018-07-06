@@ -1,0 +1,14 @@
+{% extends 'Administration/AdminLayout.html.twig' %}
+{% block content %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    <h1>Votre Collection</h1>
+
+    {% for image in diapos %}
+        <img src="{{ vich_uploader_asset(image, 'imageFile') }}" style="max-width: 250px"/>
+    {% endfor %}
+
+{% endblock %}
