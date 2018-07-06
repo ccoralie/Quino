@@ -10,6 +10,9 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Diapo_Accueil;
+use AppBundle\Entity\DiapoCarte;
+use AppBundle\Form\Diapo_AccueilType;
+use AppBundle\Form\DiapoCarteType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,12 +45,27 @@ class AdministrationController extends Controller
     }
 
     /**
-     * @route("carte/image", name="carte_images")
+     * @route("/Carte/Diapos", name="carte_diapo")
      */
 
     public function imagesCarteAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $createDiapo = new DiapoCarte();
+        $form = $this->createForm(DiapoCarteType::class, $createDiapo);
 
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->persist($createDiapo);
+            $em->flush();
+        }
+        $diapos = $em->getRepository(DiapoCarte::class)->findAll();
+
+        return $this->render('Administration/diapocarteAdmin/index.html.twig', array(
+            'diapos' => $diapos,
+            'form' => $form->createView(),
+        ));
     }
 
     /**
@@ -57,9 +75,20 @@ class AdministrationController extends Controller
     public function diapoAccueilAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $createDiapo = new Diapo_Accueil();
+        $form = $this->createForm(Diapo_AccueilType::class, $createDiapo);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->persist($createDiapo);
+            $em->flush();
+        }
         $diapos = $em->getRepository(Diapo_Accueil::class)->findAll();
+
         return $this->render('Administration/diapoaccueilAdmin/index.html.twig', array(
-            'diapos' => $diapos
+            'diapos' => $diapos,
+            'form' => $form->createView(),
         ));
     }
 
