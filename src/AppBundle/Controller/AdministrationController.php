@@ -9,10 +9,12 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Articles;
 use AppBundle\Entity\Diapo_Accueil;
 use AppBundle\Entity\DiapoCarte;
 use AppBundle\Form\Diapo_AccueilType;
 use AppBundle\Form\DiapoCarteType;
+use AppBundle\Form\ArticleType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,11 +30,76 @@ class AdministrationController extends Controller
      * @route("/", name="admin_home")
      *
      */
-    public function adminAccueilAction(Request $request)
+    public function adminAction(Request $request)
     {
         return $this->render('Administration/AdminLayout.html.twig', array(
             'user'=>$this->getUser()
         ));
+    }
+
+    /**
+     * @route("/accueil/article/new", name="admin_accueil_article_new")
+     */
+
+    public function adminAccueilArticleNewAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+
+        $article = New Articles();
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()&&$form->isValid()){
+            $em->persist($article);
+            $em->flush();
+            return $this->redirectToRoute('admin_accueil_article_list');
+        }
+
+        return $this->render('Administration/ArticlesAccueil/new.html.twig', array(
+            'form'=>$form->createView()
+        ));
+    }
+
+    /**
+     * @route("/accueil/article/list", name="admin_accueil_article_list")
+     */
+
+    public function adminAccueilArticleListAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $articles = $em->getRepository(Articles::class)->findAll();
+
+        return $this->render('Administration/ArticlesAccueil/show.html.twig', array(
+            'articles'=>$articles
+        ));
+    }
+
+    /**
+     * @route("/accueil/article/edit/{id}", name="admin_accueil_article_edit")
+     */
+
+    public function adminAccueilArticleEditAction(Request $request, Articles $article){
+        $em = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()&&$form->isValid()){
+            $em->persist($article);
+            $em->flush();
+        }
+
+        return $this->render('Administration/ArticlesAccueil/edit.html.twig', array(
+            'form'=>$form->createView(),
+            'article'=>$article
+        ));
+    }
+
+    /**
+     * @route("/accueil/article/delete/{id}", name="admin_accueil_article_delete")
+     */
+    public function adminAccueilArticleDeleteAction(Request $request, Articles $article){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($article);
+        $em->flush();
+
+        return $this->redirectToRoute('admin_accueil_article_list');
     }
 
     /**
@@ -127,4 +194,5 @@ class AdministrationController extends Controller
     {
 
     }
+
 }
