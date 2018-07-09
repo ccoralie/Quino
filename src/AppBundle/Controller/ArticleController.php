@@ -2,13 +2,13 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Article;
+use AppBundle\Entity\ArticleUE;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Article controller.
+ * ArticleUE controller.
  *
  * @Route("article")
  */
@@ -24,7 +24,7 @@ class ArticleController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $articles = $em->getRepository('AppBundle:Article')->findAll();
+        $articles = $em->getRepository('AppBundle:ArticleUE')->findAll();
 
         return $this->render('article/index.html.twig', array(
             'articles' => $articles,
@@ -39,7 +39,7 @@ class ArticleController extends Controller
      */
     public function newAction(Request $request)
     {
-        $article = new Article();
+        $article = new ArticleUE();
         $form = $this->createForm('AppBundle\Form\ArticleType', $article);
         $form->handleRequest($request);
 
@@ -63,7 +63,7 @@ class ArticleController extends Controller
      * @Route("/{id}", name="article_show")
      * @Method("GET")
      */
-    public function showAction(Article $article)
+    public function showAction(ArticleUE $article)
     {
         $deleteForm = $this->createDeleteForm($article);
 
@@ -79,7 +79,7 @@ class ArticleController extends Controller
      * @Route("/{id}/edit", name="article_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Article $article)
+    public function editAction(Request $request, ArticleUE $article)
     {
         $deleteForm = $this->createDeleteForm($article);
         $editForm = $this->createForm('AppBundle\Form\ArticleType', $article);
@@ -104,7 +104,7 @@ class ArticleController extends Controller
      * @Route("/{id}", name="article_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, Article $article)
+    public function deleteAction(Request $request, ArticleUE $article)
     {
         $form = $this->createDeleteForm($article);
         $form->handleRequest($request);
@@ -121,11 +121,11 @@ class ArticleController extends Controller
     /**
      * Creates a form to delete a article entity.
      *
-     * @param Article $article The article entity
+     * @param ArticleUE $article The article entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Article $article)
+    private function createDeleteForm(ArticleUE $article)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('article_delete', array('id' => $article->getId())))

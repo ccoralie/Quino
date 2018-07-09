@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ArcticlesUE
+ * Articles
  *
- * @ORM\Table(name="arcticles_u_e")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ArcticlesUERepository")
+ * @ORM\Table(name="articles")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticlesEURepository")
  */
-class ArcticlesUE
+class Articles
 {
     /**
      * @var int
@@ -51,7 +51,7 @@ class ArcticlesUE
      *
      * @param string $titre
      *
-     * @return ArcticlesUE
+     * @return Articles
      */
     public function setTitre($titre)
     {
@@ -75,7 +75,7 @@ class ArcticlesUE
      *
      * @param string $contenu
      *
-     * @return ArcticlesUE
+     * @return Articles
      */
     public function setContenu($contenu)
     {
