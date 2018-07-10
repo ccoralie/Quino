@@ -4,3 +4,7 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_user_manual:
+    path: '/login/'
+    defaults: { _controller: FOSUserBundle:Security:login }
