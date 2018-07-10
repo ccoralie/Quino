@@ -13,10 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Carte
 {
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie", inversedBy="carte")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Categorie", inversedBy="cartes")
+     *
      */
     private $categorie;
+
 
 
     /**
@@ -55,6 +56,13 @@ class Carte
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->nom;
+    }
+
 
 
     /**
@@ -164,37 +172,13 @@ class Carte
     }
 
     /**
-     * Set categories.
-     *
-     * @param \AppBundle\Entity\Categorie $categories
-     *
-     * @return Carte
-     */
-    public function setCategories(\AppBundle\Entity\Categorie $categories)
-    {
-        $this->categories = $categories;
-
-        return $this;
-    }
-
-    /**
-     * Get categories.
-     *
-     * @return \AppBundle\Entity\Categorie
-     */
-    public function getCategories()
-    {
-        return $this->categories;
-    }
-
-    /**
      * Set categorie.
      *
-     * @param \AppBundle\Entity\Categorie $categorie
+     * @param \AppBundle\Entity\Categorie|null $categorie
      *
      * @return Carte
      */
-    public function setCategorie(\AppBundle\Entity\Categorie $categorie)
+    public function setCategorie(\AppBundle\Entity\Categorie $categorie = null)
     {
         $this->categorie = $categorie;
 
@@ -204,7 +188,7 @@ class Carte
     /**
      * Get categorie.
      *
-     * @return \AppBundle\Entity\Categorie
+     * @return \AppBundle\Entity\Categorie|null
      */
     public function getCategorie()
     {

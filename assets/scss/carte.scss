@@ -1,0 +1,32 @@
+/* --- COLORS --- */
+
+$pink : #ea0d83;
+$green : #4a9271;
+$yellow : #ac8100;
+
+h1, h2, p, h5 {
+  text-align: center;
+}
+
+h2{
+  color: $pink !important;
+}
+
+h5{
+  font-size: 2em !important;
+  color: $green !important;
+}
+
+
+
+.container{
+  margin-top: 6vh;
+}
+
+.row{
+  display: flex;
+}
+
+.photo{
+  text-align: center;
+}
