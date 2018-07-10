@@ -11,8 +11,10 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Articles;
 use AppBundle\Entity\Carte;
+use AppBundle\Entity\Conges;
 use AppBundle\Entity\Diapo_Accueil;
 use AppBundle\Entity\DiapoCarte;
+use AppBundle\Form\CongesType;
 use AppBundle\Form\Diapo_AccueilType;
 use AppBundle\Form\DiapoCarteType;
 use AppBundle\Form\ArticleType;
@@ -243,13 +245,24 @@ class AdministrationController extends Controller
 
     }
 
-    /**
-     * @route("Info", name="infos")
+    /** GESTION DES CONGES
+     * @route("/conges", name="conges")
      */
 
-    public function InfoAction(Request $request)
+    public function CongesAction(Request $request)
     {
-
+        $em = $this->getDoctrine()->getManager();
+        $conges = $em->getRepository(Conges::class)->findAll()[0];
+        $form = $this->createForm(CongesType::class,$conges);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()&&$form->isValid()){
+            $em->persist($conges);
+            $em->flush();
+            $this->addFlash('success', 'Modifications prises en compte.');
+        }
+        return $this->render('Administration/Conges/conges.html.twig', array(
+            'form'=>$form->createView()
+        ));
     }
 
     /**

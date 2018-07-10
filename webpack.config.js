@@ -21,6 +21,7 @@ Encore
     .addEntry('css/accueil', './assets/scss/accueil.scss')
 
     .addEntry('css/carte', './assets/scss/carte.scss')
+    .addEntry('css/switch', './assets/scss/switch.scss')
 
     .addEntry('css/infos', './assets/scss/infos.scss')
 
