@@ -19,6 +19,7 @@ Encore
     .addEntry('css/main', './assets/scss/main.scss')
     .addEntry('css/dashboard', './assets/scss/dashboard.scss')
     .addEntry('css/accueil', './assets/scss/accueil.scss')
+    .addEntry('css/carte', './assets/scss/carte.scss')
 
 
     // Transfert des images dans build/images.

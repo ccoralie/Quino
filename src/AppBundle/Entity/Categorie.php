@@ -18,6 +18,12 @@ class Categorie
      */
     private $cartes;
 
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->nom;
+    }
+
     /**
      * @var int
      *
@@ -34,6 +40,15 @@ class Categorie
      */
     private $nom;
 
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cartes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id.
@@ -67,37 +82,6 @@ class Categorie
     public function getNom()
     {
         return $this->nom;
-    }
-
-    /**
-     * Set carte.
-     *
-     * @param \AppBundle\Entity\Carte $carte
-     *
-     * @return Categorie
-     */
-    public function setCarte(\AppBundle\Entity\Carte $carte)
-    {
-        $this->carte = $carte;
-
-        return $this;
-    }
-
-    /**
-     * Get carte.
-     *
-     * @return \AppBundle\Entity\Carte
-     */
-    public function getCarte()
-    {
-        return $this->carte;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->cartes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Langue
 {
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Article", mappedBy="langue")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ArticleUE", mappedBy="langue")
      */
     private $articles;
 

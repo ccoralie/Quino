@@ -1,26 +1,40 @@
 {% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/carte.css') }}">
+{% endblock %}
 
-{% block body %}
+{% block content %}
 
     <div class="container">
     <h1>LA CARTE</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis fermentum justo, ornare condimentum massa. Donec non nisi ultricies, porttitor nisi a, molestie ante. Vivamus ornare velit et consectetur ullamcorper. Nunc eget lacinia velit. Sed lorem velit, volutpat at interdum id, rhoncus at tellus. Phasellus aliquam purus nec efficitur porttitor. Proin pulvinar non enim eget bibendum.</p>
+    <p id="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis fermentum justo, ornare condimentum massa. Donec non nisi ultricies, porttitor nisi a, molestie ante. Vivamus ornare velit et consectetur ullamcorper. Nunc eget lacinia velit. Sed lorem velit, volutpat at interdum id, rhoncus at tellus. Phasellus aliquam purus nec efficitur porttitor. Proin pulvinar non enim eget bibendum.</p>
         <div class="row">
-            <div class="col-sm">
-                <h2>Titre</h2>
+            <div class="col-sm-4">
+                <h2>LAS TAPAS FRIAS</h2>
+                {% for carte in cartes %}
+                    <h5>{{ carte.nom }} ({{ carte.origine }})</h5>
+                    <h5>{{ carte.prix }}€</h5>
+                    <p>{{ carte.description }}</p>
+                {% endfor %}
+
 
 
             </div>
-            <div class="col-sm">
-                <h2>Titre</h2>
+            <div class="col-sm-4">
+                <h2>LAS TAPAS CALIENTES</h2>
 
             </div>
-            <div class="col-sm">
-                <h2>Titre</h2>
-
+            <div class="col-sm-4">
+                <h2>LOS POSTRES</h2>
             </div>
 
         </div>
+
+        <div class="photo"><img
+                    src="https://images.unsplash.com/photo-1524412529635-a258ed66c010?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=916728c49c3739ec0e9c4e063b9a2c9e&auto=format&fit=crop&w=685&q=80"/>
+        </div>
+
+
     </div>
 
 {% endblock %}
