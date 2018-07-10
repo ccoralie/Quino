@@ -1,13 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Quino | Tapas - Bar{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}"/>
+    <link rel="stylesheet" href="{{ asset('build/css/main.css') }}">
+</head>
+
+<body>
+{% block header %}
+    <header class="main-header">
+        <div class="main-header-inner clearfix">
+            <div class="nav-trigger" onclick="document.querySelector('body').classList.toggle('nav-visible');">
+                <div class="fatw-icon"> <!-- LOGO -->
+                    <img class="img-responsive logo"
+                         src="{{ asset('build/images/TIMBRE_LOGO_QUINO.14187091.png') }}"
+                         alt="fatw">
+                </div>
+                <div class="hamburger-icon"><span></span></div>
+            </div>
+            <nav class="main-nav">
+                <div class="main-nav-inner">
+                    <div class="main-nav-close">
+                        <button onclick="document.querySelector('body').classList.toggle('nav-visible');"><img
+                                    src="{{ asset('build/images/LOGO_QUINO3.ec126d36.png') }}"
+                                    alt=""></button>
+                    </div>
+                    <div class="main-nav-site">
+                        <ul>
+                            <li><a href="/accueil">Accueil</a></li>
+                            <li><a href="/carte">La Carte</a></li>
+                            <li><a href="/infos">Infos Pratiques</a></li>
+                            <li><a href="/evenements">Evenements</a></li>
+                            <li><a href="/langues">ENG/SPA</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+    <footer>
+        <div class="row verticalcenter center-block">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-3"><p>14, RUE MUNCH, 67000 STRASBOURG</p></div>
+            <div class="col-xs-2"><p>08.87.88.88.88</p></div>
+            <div class="col-xs-2">
+                <img class="facebookIcon"
+                     src="{{ asset('build/images/FACEBOOK_LOGO.91f3ce17.png') }}"
+                     alt="facebook"/>
+            </div>
+            <div class="col-xs-2">
+                <img class="instagramIcon"
+                     src="{{ asset('build/images/INSTAGRAM_LOGO.b5f02153.png') }}"
+                     alt="instagram"/>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}
+
+<!-- these 3 files now must be included in every page -->
+<script src="{{ asset('build/manifest.js') }}"></script>
+<script src="{{ asset('build/jquery_jqueryUi.js') }}"></script>
+<script src="{{ asset('build/js/app.js') }}"></script>
+
+{% block javascripts %}{% endblock %}
+
+</body>
 </html>

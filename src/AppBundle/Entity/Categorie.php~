@@ -1,0 +1,45 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Categorie
+ *
+ * @ORM\Table(name="categorie")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CategorieRepository")
+ */
+class Categorie
+{
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Carte", mappedBy="categorie")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $cartes;
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->nom;
+    }
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+
+
+}
