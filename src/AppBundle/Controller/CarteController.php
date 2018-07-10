@@ -17,12 +17,10 @@ class CarteController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $categories =$em->getRepository('AppBundle:Categorie')->findAll();
-        $cartes = $em->getRepository('AppBundle:Carte')->findAll();
+
 
         // replace this example code with whatever you need
         return $this->render('Carte/Carte.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-            'cartes' => $cartes,
             'categories' => $categories,
         ]);
     }
