@@ -18,6 +18,9 @@ Encore
     .addEntry('css/main', './assets/scss/main.scss')
     .addEntry('css/dashboard', './assets/scss/dashboard.scss')
     .addEntry('css/accueil', './assets/scss/accueil.scss')
+    .addEntry('css/infos', './assets/scss/infos.scss')
+
+    .addEntry('js/infos', './assets/js/infos.js')
 
 
     // Transfert des images dans build/images.
@@ -30,6 +33,7 @@ Encore
     .addEntry('images/ORNEMENT_LOGO', './assets/images/ORNEMENT_LOGO.png')
     .addEntry('images/TIMBRE_LOGO_QUINO', './assets/images/TIMBRE_LOGO_QUINO.png')
     .addEntry('images/PERROQUET', './assets/images/PERROQUET.png')
+    .addEntry('images/COCO_QUINO', './assets/images/COCO_QUINO.png')
 
 
     .addEntry('js/app', './assets/js/app.js')
