@@ -15,6 +15,7 @@ class CarteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('categorie')
             ->add('nom')
             ->add('origine')
             ->add('prix')
