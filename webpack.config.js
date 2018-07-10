@@ -31,6 +31,7 @@ Encore
     .addEntry('images/LOGO_QUINO3', './assets/images/LOGO_QUINO3.png')
     .addEntry('images/ORNEMENT_LOGO', './assets/images/ORNEMENT_LOGO.png')
     .addEntry('images/TIMBRE_LOGO_QUINO', './assets/images/TIMBRE_LOGO_QUINO.png')
+    .addEntry('images/PERROQUET', './assets/images/PERROQUET.png')
 
 
     .addEntry('js/app', './assets/js/app.js')
