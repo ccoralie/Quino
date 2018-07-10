@@ -61,7 +61,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/Administration/ReservationsEnAttente">
+                            <a class="nav-link" href="{{ path('carte_diapo') }}">
                                 <span data-feather="check-square"></span>
                                 Images
                             </a>
@@ -77,14 +77,14 @@
                     </li>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Administration/DiapoAccueil">
+                            <a class="nav-link" href="{{ path('accueil_diapo') }}">
                                 <span data-feather="image"></span>
                                 Diapos
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/Administration/ArticlesAccueil">
+                            <a class="nav-link" href="{{ path('admin_accueil_article_list') }}">
                                 <span data-feather="file-text"></span>
                                 Articles
                             </a>
@@ -138,14 +138,6 @@
         <main role="main" class="col-md-8 ml-sm-auto col-lg-9 pt-3 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                 <h1 class="h2">Tableau de bord</h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                    <a href="/Administration/ReservationsEnAttente">
-                        <button href="/Administration/ReservationsEnAttente" class="btn btn-sm btn-outline-secondary ">
-                            <span data-feather="calendar"></span>
-                            Réservation en Attente
-                        </button>
-                    </a>
-                </div>
             </div>
 
             {% block content %}{% endblock %}
@@ -158,8 +150,9 @@
 </div>
 
 
-
-
+{% block javascript %}
+<script src="{{ asset('build/app.js') }}"></script>
+{% endblock %}
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -167,6 +160,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 <!-- Icons -->
 <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
