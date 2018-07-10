@@ -10,11 +10,13 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Articles;
+use AppBundle\Entity\Carte;
 use AppBundle\Entity\Diapo_Accueil;
 use AppBundle\Entity\DiapoCarte;
 use AppBundle\Form\Diapo_AccueilType;
 use AppBundle\Form\DiapoCarteType;
 use AppBundle\Form\ArticleType;
+use AppBundle\Form\CarteType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,6 +38,9 @@ class AdministrationController extends Controller
             'user'=>$this->getUser()
         ));
     }
+
+    /** ADMINISTRTION METHODES PAGE ACCUEIL */
+
 
     /**
      * @route("/accueil/article/new", name="admin_accueil_article_new")
@@ -103,39 +108,6 @@ class AdministrationController extends Controller
     }
 
     /**
-     * @route("carte/plats", name="carte_plats")
-     */
-
-    public function listPlatsCarteAction(Request $request)
-    {
-
-    }
-
-    /**
-     * @route("/Carte/Diapos", name="carte_diapo")
-     */
-
-    public function imagesCarteAction(Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $createDiapo = new DiapoCarte();
-        $form = $this->createForm(DiapoCarteType::class, $createDiapo);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($createDiapo);
-            $em->flush();
-        }
-        $diapos = $em->getRepository(DiapoCarte::class)->findAll();
-
-        return $this->render('Administration/diapocarteAdmin/index.html.twig', array(
-            'diapos' => $diapos,
-            'form' => $form->createView(),
-        ));
-    }
-
-    /**
      * @route("/Accueil/Diapos", name="accueil_diapo")
      */
 
@@ -158,6 +130,109 @@ class AdministrationController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+    /** ADMINISTRTION METHODES PAGE CARTE */
+
+
+    /**
+     * @route("/carte/plat/new", name="admin_carte_plat_new")
+     */
+
+    public function adminCartePlatNewAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+
+        $plat = New Carte();
+        $form = $this->createForm(CarteType::class, $plat);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()&&$form->isValid()){
+            $em->persist($plat);
+            $em->flush();
+            return $this->redirectToRoute('admin_carte_plats_list');
+        }
+
+        return $this->render('Administration/PlatsCarte/new.html.twig', array(
+            'form'=>$form->createView()
+        ));
+    }
+
+
+
+    /**
+     * @route("/carte/plats/list", name="admin_carte_plats_list")
+     */
+
+    public function listPlatsCarteAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $plats = $em->getRepository(Carte::class)->findAll();
+
+        return $this->render('Administration/PlatsCarte/show.html.twig', array(
+            'plats'=>$plats
+        ));
+    }
+
+    /**
+     * @route("/carte/plat/edit/{id}", name="admin_carte_plat_edit")
+     */
+
+    public function adminCartePlatsEditAction(Request $request, Carte $plats){
+        $em = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(CarteType::class, $plats);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()&&$form->isValid()){
+            $em->persist($plats);
+            $em->flush();
+        }
+
+        return $this->render('Administration/PlatsCarte/edit.html.twig', array(
+            'form'=>$form->createView(),
+            'article'=>$plats
+        ));
+    }
+
+    /**
+     * @route("/carte/plat/delete/{id}", name="admin_carte_plat_delete")
+     */
+    public function adminCartePlatDeleteAction(Request $request, Carte $plat){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($plat);
+        $em->flush();
+
+        return $this->redirectToRoute('admin_carte_plats_list');
+    }
+
+
+
+
+
+
+
+
+    /**
+     * @route("/Carte/Diapos", name="carte_diapo")
+     */
+
+    public function imagesCarteAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $createDiapo = new DiapoCarte();
+        $form = $this->createForm(DiapoCarteType::class, $createDiapo);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->persist($createDiapo);
+            $em->flush();
+        }
+        $diapos = $em->getRepository(DiapoCarte::class)->findAll();
+
+        return $this->render('Administration/diapocarteAdmin/index.html.twig', array(
+            'diapos' => $diapos,
+            'form' => $form->createView(),
+        ));
+    }
+
+
 
     /**
      * @route("Acceuil/Articles", name="acceuil_articles")
