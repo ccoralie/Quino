@@ -7,7 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CarteType extends AbstractType
+class CongesType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -15,19 +15,16 @@ class CarteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('categorie')
-            ->add('nom')
-            ->add('origine')
-            ->add('prix')
-            ->add('description')
-            ->add('save', SubmitType::class, array('label' => 'Enregister'));
+            ->add('texte')
+            ->add('actif')
+            ->add('enregistrer', SubmitType::class);
     }/**
- * {@inheritdoc}
- */
+     * {@inheritdoc}
+     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Carte'
+            'data_class' => 'AppBundle\Entity\Conges'
         ));
     }
 
@@ -36,7 +33,7 @@ class CarteType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_carte';
+        return 'appbundle_conges';
     }
 
 
