@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/infos.css') }}">
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHIZ1Ggafm-yKrCgYMvPxACrNrJhMzkbc&sensor=false">
+    </script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div id="map">Veuillez patienter pendant le chargement de la carte...</div>
+    </div>
+    <div class="row">
+        <div class="texte">
+            <h1>Hola !</h1><p>AJOUTER : Accès Horaires Jours d'ouvertures Congés Offre de groupe</p>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block javascripts %}
+        <script type="text/javascript" async defer
+                src="https://maps.googleapis.com/maps/api/place/nearbysearch/json
+  ?location=-33.8670522,151.1957362
+  &radius=500
+  &types=food
+  &name=harbour
+  &key=AIzaSyDRpAi7zfyNLjMK6_ae_jVupSmQJvwFmqA"></script>
+
+        <script type="text/javascript" src="{{ asset('build/js/infos.js') }}"></script>
+    {% endblock %}
