@@ -75,7 +75,7 @@ initialize = function () {
     // Je configure Coco_Quino Lama personnalisée
     var COCO = {
         // Adresse de l'icône personnalisée
-        url: "/build/images/COCO_QUINO.29901791.png",
+        url: "/build/images/COCO_QUINO.58b69662.png",
         scaledSize: new google.maps.Size(70, 105),
     };
 
@@ -87,11 +87,13 @@ initialize = function () {
         position: latLng,
         map: map,
         title: "QUINO",
-        icon: COCO
+        icon: COCO,
+        animation:google.maps.Animation.BOUNCE,
+
     });
 
     // Je défini la bulle de texte.
-    var contentMarker = '<p style="color:black;">Hola ! C\'est moi Coco Quino le plus beau de tous les haricots !</p>'
+    var contentMarker = '<p style="color:black;">14 rue Munch !</p>'
 
     var infoWindow = new google.maps.InfoWindow({
         content: contentMarker,
