@@ -93,4 +93,10 @@ class Conges
     {
         return $this->actif;
     }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->texte;
+    }
 }

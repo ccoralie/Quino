@@ -144,7 +144,7 @@ class Langue
      *
      * @return Langue
      */
-    public function addArticle(\AppBundle\Entity\Flight $article)
+    public function addArticle(\AppBundle\Entity\Langue $article)
     {
         $this->articles[] = $article;
 
@@ -158,7 +158,7 @@ class Langue
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeArticle(\AppBundle\Entity\Flight $article)
+    public function removeArticle(\AppBundle\Entity\Langue $article)
     {
         return $this->articles->removeElement($article);
     }
@@ -172,4 +172,11 @@ class Langue
     {
         return $this->articles;
     }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->langue;
+    }
+
 }
