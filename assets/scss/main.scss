@@ -50,10 +50,11 @@ h1, h2, h3, h4 {
   background-repeat: repeat;
   left:0;
   top:0;
+  position:fixed;
   width:100%;
   height:120px;
   z-index:5;
-  transition:transform .4s ease;
+  transition:transform .4s ease
 }
 
 .main-header .main-header-inner{
@@ -71,8 +72,8 @@ h1, h2, h3, h4 {
 
 /* carré */
 .nav-trigger{
-  z-index: 1000;
   cursor:pointer;
+  height:150px;
   left:50%;
   position:absolute;
   top:0;
@@ -102,6 +103,11 @@ h1, h2, h3, h4 {
     transform-origin:left top}
 
 }
+
+.nav-trigger .fatw-icon{
+  padding:10px 10px 0;
+}
+
 /* timbre logo */
 img.img-responsive.logo{
   margin-top: 15px;
@@ -169,13 +175,15 @@ img.img-responsive.logo{
 
 /*nav principale grand fond*/
 .main-nav{
-  z-index: 900;
   background: #5a8079 url("http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529834661/FOND_e0p7io.png");
   background-size: 1050px;
   font-family: 'Nilland', Georgia, serif ;
   left:0;
+  /*overflow:scroll;*/
   position:fixed;
+  /* top:60px;*/
   width:100%;
+  z-index:6;
   -webkit-overflow-scrolling:touch;
   -moz-transform:translateY(-125%);
   -moz-transform-origin:left top;
@@ -202,6 +210,7 @@ img.img-responsive.logo{
   max-width:400px;
   width:100%
 }
+
 
 .main-nav .main-nav-inner .main-nav-brand a:hover{
   text-decoration: none;
@@ -246,6 +255,7 @@ img.img-responsive.logo{
   z-index:1;
   width:100%;
   transition:all .2s linear
+
 }
 
 .main-nav .main-nav-inner .main-nav-close button img{
@@ -334,13 +344,13 @@ button.close{
   text-shadow:none;
   top:6px;
   z-index:1;
-  transition:all .2s linear
+  transition:all .2s linear;
+
 }
 button.close:hover{
   filter:alpha(opacity=75);
   opacity:.75;
   zoom:1}
-
 
 /* --- FOOTER --- */
 
