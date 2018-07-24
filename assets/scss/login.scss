@@ -1,9 +1,8 @@
-$color-foncer: black;
-$color-claire: black;
+$color-foncer: #006633;
+$color-claire: #96c01c;
 
 h4{
   color: $color-claire;
-  text-align: center;
 }
 a{
   color: $color-claire;
@@ -17,8 +16,7 @@ a:hover {
 }
 
 .login-brand {
-  margin: 20px 0 500px 0;
-  margin-bottom: 40px;
+  margin: 20px 0 40px;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 4px;

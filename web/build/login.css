@@ -1,23 +1,21 @@
 h4 {
-  color: black;
-  text-align: center; }
+  color: #96c01c; }
 
 a {
-  color: black; }
+  color: #96c01c; }
 
 a:focus,
 a:focus:active,
 a:active,
 a:hover {
-  color: black; }
+  color: #006633; }
 
 .login-brand {
-  margin: 20px 0 500px 0;
-  margin-bottom: 40px;
+  margin: 20px 0 40px;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: black;
+  color: #006633;
   text-align: center; }
 
 .card {
@@ -30,7 +28,7 @@ a:hover {
   margin-bottom: 30px; }
 
 .card.card-primary {
-  border-top: 2px solid black; }
+  border-top: 2px solid #96c01c; }
 
 .card .card-header,
 .card .card-footer,
@@ -52,17 +50,17 @@ a:hover {
   border: 1px solid #ededed; }
 
 .form-control:focus {
-  border-color: black; }
+  border-color: #96c01c; }
 
 .btn:focus,
 .btn:focus:active,
 .btn:active,
 .btn:hover {
-  background-color: black !important;
+  background-color: #96c01c !important;
   border: 1px solid transparent; }
 
 button.btn.btn-primary {
-  background-color: black !important;
+  background-color: #96c01c !important;
   font-size: 14px;
   line-height: 24px;
   padding: 10px 23px;
@@ -81,8 +79,8 @@ button.btn.btn-primary {
   outline: none; }
 
 label.custom-control-label::after {
-  background-color: black;
-  color: black; }
+  background-color: #96c01c;
+  color: #96c01c; }
 
 .switch input {
   display: none; }
@@ -120,10 +118,10 @@ label.custom-control-label::after {
 
 input:checked + .slider:before {
   transform: translateX(30px);
-  background: black; }
+  background: #96c01c; }
 
 input:checked + .slider {
-  box-shadow: 0 0 0 2px black, 0 0 2px black; }
+  box-shadow: 0 0 0 2px #96c01c, 0 0 2px #96c01c; }
 
 #login-marge {
   margin-bottom: 10%; }
