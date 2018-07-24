@@ -2,6 +2,7 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('build/css/infos.css') }}">
+    <!-- API GoogleMaps -->
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHIZ1Ggafm-yKrCgYMvPxACrNrJhMzkbc&sensor=false">
     </script>
@@ -20,6 +21,7 @@
     {% endblock %}
 
     {% block javascripts %}
+        <!-- API GoogleMaps -->
         <script type="text/javascript" async defer
                 src="https://maps.googleapis.com/maps/api/place/nearbysearch/json
   ?location=-33.8670522,151.1957362
