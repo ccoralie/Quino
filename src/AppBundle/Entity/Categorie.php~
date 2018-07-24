@@ -42,4 +42,81 @@ class Categorie
 
 
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cartes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom.
+     *
+     * @param string $nom
+     *
+     * @return Categorie
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom.
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Add carte.
+     *
+     * @param \AppBundle\Entity\Carte $carte
+     *
+     * @return Categorie
+     */
+    public function addCarte(\AppBundle\Entity\Carte $carte)
+    {
+        $this->cartes[] = $carte;
+
+        return $this;
+    }
+
+    /**
+     * Remove carte.
+     *
+     * @param \AppBundle\Entity\Carte $carte
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeCarte(\AppBundle\Entity\Carte $carte)
+    {
+        return $this->cartes->removeElement($carte);
+    }
+
+    /**
+     * Get cartes.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCartes()
+    {
+        return $this->cartes;
+    }
 }
