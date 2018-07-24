@@ -1,17 +1,33 @@
-.col-xs-6 {
-  padding: 0 !important;
+/* COL-MD -> écran sup à 768px */
+@media screen and (min-width: 768px) {
+
+  .col-md-6 {
+    padding: 0 !important;
+  }
+
+  .texteArticle {
+    padding: 2em !important;
+    width: 100%;
+    height: 55vh;
+    overflow: scroll;
+  }
+
+  .article .imageArticle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .imageArticle {
+    height : 55vh;
+  }
+
 }
 
-.texteArticle {
-  padding: 2em !important;
-}
+/* COL-XS -> Petit écran inf à 768px */
+@media screen and (max-width: 768px) {
 
-.article .imageArticle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.imageArticle {
-  height : 55vh;
+  .imageArticle img {
+    display: none;
+  }
 }
