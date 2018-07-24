@@ -24,6 +24,7 @@ Encore
     .addEntry('css/switch', './assets/scss/switch.scss')
 
     .addEntry('css/infos', './assets/scss/infos.scss')
+    .addEntry('css/multilingue', './assets/scss/multilingue.scss')
 
     .addEntry('js/infos', './assets/js/infos.js')
 

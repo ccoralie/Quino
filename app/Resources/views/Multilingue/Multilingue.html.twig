@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/multilingue.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row article">
+            <div class="col-xs-12 col-md-6 imageArticle"><img
+                        src="http://res.cloudinary.com/tiffanym/image/upload/v1529954165/edgar-castrejon-459814-unsplash_wiayi5.jpg"
+                        alt=""/></div>
+            <div class="col-xs-12 col-md-6 texteArticle">
+                <h1>PRESENTATION</h1>
+                <p>blabla in spanish consectetur adipisicing elit. Culpa cum harum quia recusandae
+                    repellendus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa dignissimos eius harum, incidunt laboriosam natus quaerat quos recusandae saepe sapiente similique suscipit.</p>
+                <br>
+                <p>blabla en español consectetur adipisicing elit. Culpa cum harum quia recusandae
+                    repellendus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequatur dolorem dolores eos error ipsa nam nisi tempora unde veritatis? Fuga, fugiat iste laborum nam sit temporibus voluptatum? Eius, eveniet.</p>
+            </div>
+        </div>
+
+
+        <div class="row article">
+            <div class="col-xs-12 col-md-6 texteArticle">
+                <h1>Lorem</h1>
+                <p>blabla in spanish consectetur adipisicing elit. Culpa cum harum quia recusandae
+                    repellendus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa dignissimos eius harum, incidunt laboriosam natus quaerat quos recusandae saepe sapiente similique suscipit.</p>
+                <br>
+                <p>blabla en español consectetur adipisicing elit. Culpa cum harum quia recusandae
+                    repellendus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequatur dolorem dolores eos error ipsa nam nisi tempora unde veritatis? Fuga, fugiat iste laborum nam sit temporibus voluptatum? Eius, eveniet.</p>
+            </div>
+            <div class="col-xs-12 col-md-6 imageArticle"><img
+                        src="http://res.cloudinary.com/tiffanym/image/upload/v1529954165/edgar-castrejon-459814-unsplash_wiayi5.jpg"
+                        alt=""/></div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

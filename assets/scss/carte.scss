@@ -14,6 +14,10 @@ h2{
 
 h5{
   font-size: 2em !important;
+  color: $green !important;
+}
+p{
+  color: #000;
 }
 
 /* --- CAROUSEL --- */
@@ -61,4 +65,9 @@ h5{
 
 .photo{
   text-align: center;
+}
+
+.col-sm-4 {
+  background-color: #ebe7d1;
+  margin: 1vw;
 }
