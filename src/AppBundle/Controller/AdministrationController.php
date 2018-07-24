@@ -10,6 +10,7 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Articles;
+use AppBundle\Entity\ArticleUE;
 use AppBundle\Entity\Carte;
 use AppBundle\Entity\Conges;
 use AppBundle\Entity\Diapo_Accueil;
@@ -19,6 +20,7 @@ use AppBundle\Form\Diapo_AccueilType;
 use AppBundle\Form\DiapoCarteType;
 use AppBundle\Form\ArticleType;
 use AppBundle\Form\CarteType;
+use AppBundle\Form\MultilingueType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -237,10 +239,10 @@ class AdministrationController extends Controller
 
 
     /**
-     * @route("Acceuil/Articles", name="acceuil_articles")
+     * @route("Accueil/Articles", name="accueil_articles")
      */
 
-    public function articleAcceuilAction(Request $request)
+    public function articleAccueilAction(Request $request)
     {
 
     }
@@ -265,22 +267,71 @@ class AdministrationController extends Controller
         ));
     }
 
+    /** ADMINISTRTION METHODES PAGE UE */
+
+
     /**
-     * @route("multilingue/ajouter", name="carte_images")
+     * @route("/multilingue/article/new", name="admin_multilingue_article_new")
      */
 
-    public function ajouterMultilingueAction(Request $request)
-    {
+    public function adminMultilingueArticleNewAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $article_ue = New ArticleUE();
+        $form = $this->createForm(MultilingueType::class, $article_ue);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()&&$form->isValid()){
+            $em->persist($article_ue);
+            $em->flush();
+            return $this->redirectToRoute('admin_multilingue_article_list');
+        }
 
+        return $this->render('Administration/Multilingue/new.html.twig', array(
+            'form'=>$form->createView()
+        ));
     }
 
     /**
-     * @route("multilingue/editer", name="carte_images")
+     * @route("/multilingue/article/list", name="admin_multilingue_article_list")
      */
 
-    public function editerMultilingueAction(Request $request)
-    {
+    public function adminMultilingueArticleListAction(Request $request){
+        $em = $this->getDoctrine()->getManager();
+        $article_ue = $em->getRepository(ArticleUE::class)->findAll();
 
+        return $this->render('Administration/Multilingue/show.html.twig', array(
+            'article_ue'=>$article_ue
+        ));
+    }
+
+    /**
+     * @route("/multilingue/article/edit/{id}", name="admin_multilingue_article_edit")
+     */
+
+    public function adminMultilingueArticleEditAction(Request $request, ArticleUE $article){
+        $em = $this->getDoctrine()->getManager();
+
+        $form = $this->createForm(MultilingueType::class, $article);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()&&$form->isValid()){
+            $em->persist($article);
+            $em->flush();
+        }
+
+        return $this->render('Administration/Multilingue/edit.html.twig', array(
+            'form'=>$form->createView(),
+            'article'=>$article
+        ));
+    }
+
+    /**
+     * @route("/multilingue/article/delete/{id}", name="admin_multilingue_article_delete")
+     */
+    public function adminMultilingueArticleDeleteAction(Request $request, Articles $article){
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($article);
+        $em->flush();
+
+        return $this->redirectToRoute('admin_multilingue_article_list');
     }
 
 }
