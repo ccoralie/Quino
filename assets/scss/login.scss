@@ -1,26 +1,55 @@
-$color-foncer: #006633;
-$color-claire: #96c01c;
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
-h4{
-  color: $color-claire;
+
+/* --- COLORS --- */
+
+$pink : #ea0d83;
+$green : #4a9271;
+$yellow : #ac8100;
+
+
+/* --- FONTS --- */
+
+@font-face {
+  font-family: 'Nilland';
+  src:    url('../fonts/Nilland.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINN';
+  src:    url('../fonts/DINNextLTPro-LightCondensed.otf') format('OpenType');
+}
+
+
+
+.card-header{
+  color: $pink !important;
+  text-align: center;
+  font-size: 2em;
 }
 a{
-  color: $color-claire;
+  color: $green;
 }
 
 a:focus,
 a:focus:active,
 a:active,
 a:hover {
-  color: $color-foncer;
+  color: $pink;
 }
 
+#app{
+  margin-top: 30vh;
+  margin-left: 27vw;
+  background-color: transparent;
+}
 .login-brand {
-  margin: 20px 0 40px;
+  margin: 80px 0 20px;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: $color-foncer;
+  color: $pink;
   text-align: center;
 }
 
@@ -32,10 +61,12 @@ a:hover {
   border: none;
   position: relative;
   margin-bottom: 30px;
+  padding: 1vw;
 }
 
 .card.card-primary {
-  border-top: 2px solid $color-claire;
+  border-top: 2px solid $green;
+  background-color: #f1f1f1 !important;
 }
 
 .card .card-header,
@@ -48,6 +79,7 @@ a:hover {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 
 .form-group label {
   font-weight: 500;
@@ -62,19 +94,19 @@ a:hover {
 }
 
 .form-control:focus {
-  border-color: $color-claire;
+  border-color: $green;
 }
 
 .btn:focus,
 .btn:focus:active,
 .btn:active,
 .btn:hover {
-  background-color: $color-claire !important;
+  background-color: $green !important;
   border: 1px solid transparent;
 }
 
 button.btn.btn-primary{
-  background-color: $color-claire !important;
+  background-color: $green !important;
   font-size: 14px;
   line-height: 24px;
   padding: 10px 23px;
@@ -98,8 +130,8 @@ button.btn.btn-primary{
 
 
 label.custom-control-label::after{
-  background-color: $color-claire;
-  color: $color-claire;
+  background-color: $green;
+  color: $green;
 }
 .switch input {
   display:none;
@@ -139,16 +171,20 @@ label.custom-control-label::after{
 
 input:checked + .slider:before {
   transform:translateX(30px);
-  background:$color-claire;
+  background:$green;
 }
 input:checked + .slider {
-  box-shadow:0 0 0 2px $color-claire,0 0 2px $color-claire;
+  box-shadow:0 0 0 2px $green,0 0 2px $green;
+
+}
+#remember{
+  font-size: 1.2em;
+  color: #000;
 
 }
 #login-marge{
   margin-bottom: 10%;
 }
-
 
 
 
