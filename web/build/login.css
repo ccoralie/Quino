@@ -5964,3 +5964,22 @@ input:checked + .slider {
 
 #login-marge {
   margin-bottom: 10%; }
+
+/*-------reset mdp -------*/
+#resetMdp {
+  width: 80%;
+  margin-left: 10%; }
+
+.jumbotron-fluid {
+  padding: 2vw; }
+
+input.btn.btn-outline-success.waves-effect {
+  background-color: #4a9271 !important;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 10px 23px;
+  letter-spacing: .4px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  width: 100%; }
