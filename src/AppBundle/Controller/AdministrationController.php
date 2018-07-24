@@ -326,7 +326,7 @@ class AdministrationController extends Controller
     /**
      * @route("/multilingue/article/delete/{id}", name="admin_multilingue_article_delete")
      */
-    public function adminMultilingueArticleDeleteAction(Request $request, Articles $article){
+    public function adminMultilingueArticleDeleteAction(Request $request, ArticleUE $article){
         $em = $this->getDoctrine()->getManager();
         $em->remove($article);
         $em->flush();
