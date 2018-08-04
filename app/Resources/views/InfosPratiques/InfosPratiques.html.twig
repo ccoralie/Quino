@@ -13,7 +13,9 @@
     <div class="row">
         <div class="texte">
             <h1>Infos Pratiques</h1>
-            <p>{{ conges|raw }}</p>
+            {% for info in conges %}
+            <p>{{ info.texte|raw }}</p>
+            {% endfor %}
         </div>
     </div>
     <div class="row">

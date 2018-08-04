@@ -15,12 +15,11 @@ class InfosPratiquesController extends Controller
     public function indexAction(Request $request)
     {
         $em= $this->getDoctrine()->getManager();
-        $conges = $em->getRepository(Conges::class)->findAll()[0];
+        $conges = $em->getRepository(Conges::class)->findAll();
 
 
         // replace this example code with whatever you need
         return $this->render('InfosPratiques/InfosPratiques.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'conges' => $conges,
         ]);
     }
