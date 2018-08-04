@@ -236,7 +236,17 @@ class AdministrationController extends Controller
         ));
     }
 
+    /**
+     * @route("/Carte/Diapos/delete/{id}", name="carte_diapo_delete")
+     */
+    public function imagesCarteDeleteAction(Request $request, DiapoCarte $diapo)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($diapo);
+        $em->flush();
 
+        return $this->redirectToRoute('carte_diapo');
+    }
 
     /**
      * @route("Accueil/Articles", name="accueil_articles")
