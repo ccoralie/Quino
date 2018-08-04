@@ -257,14 +257,26 @@ class AdministrationController extends Controller
 
     }
 
-    /** GESTION DES CONGES
-     * @route("/conges", name="conges")
+    /**
+     *@route("/conges/list",name="conges_list")
      */
-
-    public function CongesAction(Request $request)
+    public function congesListAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $conges = $em->getRepository(Conges::class)->findAll()[0];
+        $conges = $em->getRepository(Conges::class)->findAll();
+
+        return $this->render('Administration/PlatsCarte/show.html.twig', array(
+            'conges'=>$conges
+        ));
+    }
+
+    /** GESTION DES CONGES
+     * @route("/conges/edit/{id}", name="conges")
+     */
+
+    public function congesEditAction(Request $request, Conges $conges)
+    {
+        $em = $this->getDoctrine()->getManager();
         $form = $this->createForm(CongesType::class,$conges);
         $form->handleRequest($request);
         if ($form->isSubmitted()&&$form->isValid()){
