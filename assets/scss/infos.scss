@@ -1,17 +1,28 @@
 #map {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 400px;
+  margin-top: 4vw;
+  margin-bottom: 2vw;
+  margin-left: 5vw;
 }
 
 .texte {
-  width: 50%;
+  width: 90%;
+  display: block;
+  background-color: #ebe7d1;
+  padding: 1em;
   margin: 0 auto;
+
   h1 {
     text-align: center;
-    color: #f7ecda;
+    color: #ea0d83;
   }
   p {
     text-align: justify;
+    color: black;
   }
+}
+#blockinfo {
+  margin-top:5vw;
 }
