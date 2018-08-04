@@ -7,8 +7,14 @@
 
     <h1>Votre Collection</h1>
 
-    {% for image in diapos %}
-        <img src="{{ vich_uploader_asset(image, 'imageFile') }}" style="max-width: 250px"/>
-    {% endfor %}
+    <div class="row">
+        {% for image in diapos %}
+            <div class="col-3 text-center">
+                <img class="img-thumbnail" src="{{ vich_uploader_asset(image, 'imageFile') }}"/>
+                <a href="{{ path('carte_diapo_delete',{'id': image.id}) }}"><button class="btn-danger">Supprimer</button></a>
+            </div>
+        {% endfor %}
+    </div>
+
 
 {% endblock %}
