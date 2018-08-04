@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/accueil.css') }}">
+{% endblock %}
+
+{% block content %}
+    {# <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+         <ol class="carousel-indicators">
+             <li data-target="#carousel" data-slide-to="0" class="active"></li>
+             <li data-target="#carousel" data-slide-to="1"></li>
+             <li data-target="#carousel" data-slide-to="2"></li>
+         </ol>
+
+         <div class="carousel-inner">
+             <div class="active item"><img
+                         src="http://res.cloudinary.com/tiffanym/image/upload/q_70/v1529954170/bjorn-radestrom-646516-unsplash_b5ya3e.jpg"/>
+             </div>
+             <div class="item"><img
+                         src="http://res.cloudinary.com/tiffanym/image/upload/q_70/v1529954200/edgar-castrejon-459818-unsplash_vnxyyn.jpg"/>
+             </div>
+             <div class="item"><img
+                         src="http://res.cloudinary.com/tiffanym/image/upload/q_70/a_0/v1529954217/edgar-castrejon-459822-unsplash_irxu04.jpg"/>
+             </div>
+         </div>
+
+         <a class="left carousel-control" href="#carousel" data-slide="prev">
+             <span class="glyphicon glyphicon-chevron-left"></span>
+         </a>
+         <a class="right carousel-control" href="#carousel" data-slide="next">
+             <span class="glyphicon glyphicon-chevron-right"></span>
+         </a>
+     </div>
+
+
+     <div class="row article">
+ <div class="col-md-1"></div>
+         <div class="col-xs-12 col-md-4 illustration"><img
+                     src="http://res.cloudinary.com/tiffanym/image/upload/v1529954165/edgar-castrejon-459814-unsplash_wiayi5.jpg"
+                     alt="food" style="width:100%;"></div>
+         <div class="col-xs-12 col-md-6 texteArticle">
+             <h1 class="text-center">Présentation</h1><br>
+             <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                 rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                 explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                 consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                 dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                 incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                 exercitationem ullam corporis suscipit ?"</p>
+         </div>
+     </div>#}
+
+    <!-- PHOTO1 + HEADER -->
+    <div id="hoofding">
+        <header data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -200px;">
+            <div id="headercontent" data-top=" opacity:1; transform[swing]:scale(1) "
+                 data-top-bottom=" opacity:0; transform[swing]:scale(0.5) " data-anchor-target="header">
+            </div>
+            <div class="mouse animated fadeInUp" data-top=" opacity:1;  " data-top-bottom=" opacity:0; "
+                 data-anchor-target="header">
+                <div class="scroll">
+                </div>
+            </div>
+        </header>
+
+        <!-- TEXTE -->
+        <div class="texte" style="padding-top:100px;padding-bottom:100px"><h1>Hola !</h1><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        </div>
+
+        <!-- PHOTO2 -->
+        <section class="fullwidth">
+            <div class="paralax1" data-center="background-position: 50% 0px;"
+                 data-top-bottom="background-position: 50% -200px;" data-bottom-top="background-position: 50% 100px;">
+                <div class="paralaxtext" data-bottom-top=" opacity:0; transform[swing]:scale(0.5) "
+                     data-top=" opacity:1; transform[swing]:scale(1) ">
+                    <h2 style="color:white">Vamos, estamos bien !</h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEXTE -->
+        <div class="texte" style="padding-top:100px;padding-bottom:100px">
+            <h1>Hola !</h1>
+            <p>Mon blabla</p>
+        </div>
+
+        <!-- PHOTO3 -->
+        <section class="fullwidth">
+            <div class="paralax2" data-center="background-position: 50% 0px;"
+                 data-top-bottom="background-position: 50% -200px;" data-bottom-top="background-position: 50% 100px;">
+                <div class="paralaxtext">
+                    <h2 style="color:white" data-bottom-top="letter-spacing: 10px;" data-top="letter-spacing: 20px; ">La
+                        cuenta por favor !</h2>
+                </div>
+            </div>
+        </section>
+{% endblock %}

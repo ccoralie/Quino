@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/carte.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="active item">
+                <img src="http://res.cloudinary.com/tiffanym/image/upload/q_70/v1529954170/bjorn-radestrom-646516-unsplash_b5ya3e.jpg"/>
+            </div>
+            <div class="item">
+                <img src="http://res.cloudinary.com/tiffanym/image/upload/q_70/v1529954200/edgar-castrejon-459818-unsplash_vnxyyn.jpg"/>
+            </div>
+            <div class="item">
+                <img src="http://res.cloudinary.com/tiffanym/image/upload/q_70/a_0/v1529954217/edgar-castrejon-459822-unsplash_irxu04.jpg"/>
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+<div class="container">
+    <h1>LA CARTE</h1>
+    <p id="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis fermentum justo, ornare condimentum massa. Donec non nisi ultricies, porttitor nisi a, molestie ante. Vivamus ornare velit et consectetur ullamcorper. Nunc eget lacinia velit. Sed lorem velit, volutpat at interdum id, rhoncus at tellus. Phasellus aliquam purus nec efficitur porttitor. Proin pulvinar non enim eget bibendum.</p>
+        <div class="row">
+            {% for categorie in categories %}
+            <div class="col-sm-4 ">
+                <h2>{{ categorie.nom }}</h2>
+                {% for carte in categorie.cartes %}
+
+                    <h5>{{ carte.nom }} ({{ carte.origine }})</h5>
+                    <h5>{{ carte.prix }}€</h5>
+                    <p>{{ carte.description }}</p>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+
+</div>
+
+{% endblock %}

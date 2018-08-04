@@ -1,0 +1,169 @@
+/* --- COLORS --- */
+
+$pink: #ea0d83;
+$green: #4a9271;
+$yellow: #ac8100;
+
+body {
+  background: url(http://res.cloudinary.com/tiffanym/image/upload/q_100/v1529834661/FOND_e0p7io.png) repeat fixed;
+}
+
+/* --- CAROUSEL --- */
+
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      transition-property: opacity;
+    }
+
+    .item,
+    .active.left,
+    .active.right {
+      opacity: 0;
+    }
+
+    .active,
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+
+    .next,
+    .prev,
+    .active.left,
+    .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .carousel-control {
+    z-index: 2;
+  }
+}
+
+html,
+body,
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 75vh;
+  object-fit: cover;
+}
+
+/* --- ARTICLE --- */
+
+.illustration img {
+  height: 400px;
+  min-width: 400px;
+  object-fit: cover;
+}
+
+.article {
+  padding: 20vh 10vh 20vh 10vh;
+  width: 100%;
+}
+
+.texteArticle {
+  p {
+    margin-left: 50px;
+  }
+  h1 {
+    text-transform: uppercase;
+    color: $pink;
+  }
+}
+
+/* --- V2 de l'accueil (ma favorite) --- */
+
+/* HEADER*/
+header {
+  top: 0;
+  height: 600px;
+  max-height: 100vh;
+  background: url(http://res.cloudinary.com/tiffanym/image/upload/q_70/v1529954170/bjorn-radestrom-646516-unsplash_b5ya3e.jpg) 50% 0 no-repeat fixed;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: $green;
+}
+
+.hoofding {
+  width: 100%;
+}
+
+/* TEXTEEEEEEEE */
+
+.texte {
+  width: 50%;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+    color: #f7ecda;
+  }
+  p {
+    text-align: justify;
+  }
+}
+
+/* PARALLALALALALAX */
+
+.paralaxtext {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 100px;
+}
+
+.paralax1 {
+  background: url(http://res.cloudinary.com/tiffanym/image/upload/q_70/a_0/v1529954217/edgar-castrejon-459822-unsplash_irxu04.jpg) 50% 0 no-repeat fixed;
+  margin: 0 auto;
+  padding: 50px 0;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: $green;
+}
+
+.paralax2 {
+  background: url("/images/accueil/30e3be522f3267e0a291c15de3a21a1282f433c3.png") no-repeat fixed;
+  margin: 0 auto;
+  padding: 50px 0;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  color: $green;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
