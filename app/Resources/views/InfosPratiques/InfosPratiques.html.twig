@@ -9,15 +9,17 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid" id="blockinfo">
+    <div class="row">
+        <div class="texte">
+            <h1>Infos Pratiques</h1>
+            <p>{{ conges|raw }}</p>
+        </div>
+    </div>
     <div class="row">
         <div id="map">Veuillez patienter pendant le chargement de la carte...</div>
     </div>
-    <div class="row">
-        <div class="texte">
-            <h1>Hola !</h1><p>{{ conges|raw }}</p>
-        </div>
-    </div>
+</div>
     {% endblock %}
 
     {% block javascripts %}
