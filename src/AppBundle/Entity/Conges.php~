@@ -24,6 +24,13 @@ class Conges
     /**
      * @var string|null
      *
+     * @ORM\Column(name="type_info", type="text", nullable=true)
+     */
+    private $typeInfo;
+
+    /**
+     * @var string|null
+     *
      * @ORM\Column(name="texte", type="text", nullable=true)
      */
     private $texte;

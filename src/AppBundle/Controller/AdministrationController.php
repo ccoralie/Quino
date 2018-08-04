@@ -265,13 +265,33 @@ class AdministrationController extends Controller
         $em = $this->getDoctrine()->getManager();
         $conges = $em->getRepository(Conges::class)->findAll();
 
-        return $this->render('Administration/PlatsCarte/show.html.twig', array(
+        return $this->render('Administration/Conges/list.html.twig', array(
             'conges'=>$conges
         ));
     }
 
+    /**
+     *@route("/conges/new",name="conges_new")
+     */
+    public function congesNewAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $conges = New Conges();
+        $form = $this->createForm(CongesType::class, $conges);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()&&$form->isValid()){
+            $em->persist($conges);
+            $em->flush();
+            return $this->redirectToRoute('conges_list');
+        }
+
+        return $this->render('Administration/Conges/new.html.twig', array(
+            'form'=>$form->createView()
+        ));
+    }
+
     /** GESTION DES CONGES
-     * @route("/conges/edit/{id}", name="conges")
+     * @route("/conges/edit/{id}", name="conges_edit")
      */
 
     public function congesEditAction(Request $request, Conges $conges)
@@ -284,7 +304,7 @@ class AdministrationController extends Controller
             $em->flush();
             $this->addFlash('success', 'Modifications prises en compte.');
         }
-        return $this->render('Administration/Conges/conges.html.twig', array(
+        return $this->render('Administration/Conges/edit.html.twig', array(
             'form'=>$form->createView()
         ));
     }

@@ -106,4 +106,28 @@ class Conges
         // TODO: Implement __toString() method.
         return $this->texte;
     }
+
+    /**
+     * Set typeInfo.
+     *
+     * @param string|null $typeInfo
+     *
+     * @return Conges
+     */
+    public function setTypeInfo($typeInfo = null)
+    {
+        $this->typeInfo = $typeInfo;
+
+        return $this;
+    }
+
+    /**
+     * Get typeInfo.
+     *
+     * @return string|null
+     */
+    public function getTypeInfo()
+    {
+        return $this->typeInfo;
+    }
 }

@@ -16,6 +16,7 @@ class CongesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('typeInfo')
             ->add('texte', TextareaType::class, array(
                 'attr' => array(
                     'class' => 'tinymce',
