@@ -7,21 +7,17 @@
 
     <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
-            <li data-target="#carousel" data-slide-to="2"></li>
+            {% for i, image in diapos %}
+                <li data-target="#carousel" data-slide-to="{{ i }}" {% if i==0 %}class="active"{% endif %}></li>
+            {% endfor %}
         </ol>
 
         <div class="carousel-inner">
-            <div class="active item">
-                <img src="http://res.cloudinary.com/tiffanym/image/upload/q_70/v1529954170/bjorn-radestrom-646516-unsplash_b5ya3e.jpg"/>
-            </div>
-            <div class="item">
-                <img src="http://res.cloudinary.com/tiffanym/image/upload/q_70/v1529954200/edgar-castrejon-459818-unsplash_vnxyyn.jpg"/>
-            </div>
-            <div class="item">
-                <img src="http://res.cloudinary.com/tiffanym/image/upload/q_70/a_0/v1529954217/edgar-castrejon-459822-unsplash_irxu04.jpg"/>
-            </div>
+            {% for i,image in diapos %}
+                <div class="{% if i==0 %}active{% endif %} item">
+                    <img src="{{ vich_uploader_asset(image, 'imageFile') }}"/>
+                </div>
+            {% endfor %}
         </div>
 
         <a class="left carousel-control" href="#carousel" data-slide="prev">

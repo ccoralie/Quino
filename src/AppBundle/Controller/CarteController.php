@@ -18,10 +18,13 @@ class CarteController extends Controller
 
         $categories =$em->getRepository('AppBundle:Categorie')->findAll();
 
+        $diapos = $em->getRepository('AppBundle:DiapoCarte')->findAll();
+
 
         // replace this example code with whatever you need
         return $this->render('Carte/Carte.html.twig', [
             'categories' => $categories,
+            'diapos' => $diapos,
         ]);
     }
 
