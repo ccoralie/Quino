@@ -66,12 +66,12 @@
         <!-- TEXTE -->
 
         <div class="dispoArcticles">
-            <div class="texte" style="padding-top:100px;padding-bottom:100px"><h1>{{ articles.0.titre }}</h1>
-                <p>{{ articles.0.contenu }}</p>
+            <div class="texte" style="padding-top:100px;padding-bottom:100px"><h1>{{ articles.0.titre|raw }}</h1>
+                <p>{{ articles.0.contenu|raw }}</p>
             </div>
             <div class="texte" style="padding-top:100px;padding-bottom:100px">
-                <h1>{{ articles.1.titre }}</h1>
-                <p>{{ articles.1.contenu }}</p>
+                <h1>{{ articles.1.titre|raw }}</h1>
+                <p>{{ articles.1.contenu|raw }}</p>
             </div>
         </div>
 
@@ -89,12 +89,12 @@
         <!-- TEXTE -->
         <div class="dispoArcticles">
             <div class="texte" style="padding-top:100px;padding-bottom:100px">
-                <h1>{{ articles.2.titre }}</h1>
-                <p>{{ articles.2.contenu }}</p>
+                <h1>{{ articles.2.titre|raw }}</h1>
+                <p>{{ articles.2.contenu|raw }}</p>
             </div>
             <div class="texte" style="padding-top:100px;padding-bottom:100px">
-                <h1>{{ articles.3.titre }}</h1>
-                <p>{{ articles.3.contenu }}</p>
+                <h1>{{ articles.3.titre|raw }}</h1>
+                <p>{{ articles.3.contenu|raw }}</p>
             </div>
         </div>
 
