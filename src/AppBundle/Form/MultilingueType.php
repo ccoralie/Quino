@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,7 +17,11 @@ class MultilingueType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('contenu')
+            ->add('contenu', TextareaType::class, array(
+            'attr' => array(
+            'class' => 'tinymce',
+            'data-theme' => 'bbcode' // Skip it if you want to use default theme
+        )))
             ->add('langue')
             ->add('save', SubmitType::class, array('label' => 'Enregister'));
     }/**
