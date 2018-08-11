@@ -1,0 +1,73 @@
+/* --- COLORS --- */
+
+$pink : #ea0d83;
+$green : #4a9271;
+$yellow : #ac8100;
+
+h1, h2, p, h5 {
+  text-align: center;
+}
+
+h2{
+  color: $pink !important;
+}
+
+h5{
+  font-size: 2em !important;
+  color: $green !important;
+}
+p{
+  color: #000;
+}
+
+/* --- CAROUSEL --- */
+
+.carousel-fade {
+  .carousel-inner {
+    .item {
+      transition-property: opacity;
+      height: 80vh;
+    }
+
+    .item,
+    .active.left,
+    .active.right {
+      opacity: 0;
+    }
+
+    .active,
+    .next.left,
+    .prev.right {
+      opacity: 1;
+    }
+
+    .next,
+    .prev,
+    .active.left,
+    .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .carousel-control {
+    z-index: 2;
+  }
+}
+
+.container{
+  margin-top: 6vh;
+}
+
+.row{
+  display: flex;
+}
+
+.photo{
+  text-align: center;
+}
+
+.col-sm-4 {
+  background-color: #ebe7d1;
+  margin: 1vw;
+}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/multilingue.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row article">
+        <div class="col-xs-12 col-md-6 imageArticle"><img
+                    src="http://res.cloudinary.com/tiffanym/image/upload/v1529954165/edgar-castrejon-459814-unsplash_wiayi5.jpg"
+                    alt=""/></div>
+        <div class="col-xs-12 col-md-6 texteArticle">
+            <div class="fondArticle">
+                <h2>{{ multilingue.0.titre|raw }}</h2>
+                <p>{{ multilingue.0.contenu|raw }}</p>
+            </div>
+        </div>
+
+
+        <div class="row article">
+            <div class="col-xs-12 col-md-6 texteArticle">
+                <div class="fondArticle">
+                    <h2>{{ multilingue.1.titre|raw }}</h2>
+                    <p>{{ multilingue.1.contenu|raw }}</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 imageArticle"><img
+                        src="http://res.cloudinary.com/tiffanym/image/upload/v1529954165/edgar-castrejon-459814-unsplash_wiayi5.jpg"
+                        alt=""/></div>
+        </div>
+    </div>
+
+
+    {% endblock %}
+

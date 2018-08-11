@@ -1,0 +1,211 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+
+/* --- COLORS --- */
+
+$pink : #ea0d83;
+$green : #4a9271;
+$yellow : #ac8100;
+
+
+/* --- FONTS --- */
+
+@font-face {
+  font-family: 'Nilland';
+  src:    url('../fonts/Nilland.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINN';
+  src:    url('../fonts/DINNextLTPro-LightCondensed.otf') format('OpenType');
+}
+
+
+
+.card-header{
+  color: $pink !important;
+  text-align: center;
+  font-size: 2em;
+}
+a{
+  color: $green;
+}
+
+a:focus,
+a:focus:active,
+a:active,
+a:hover {
+  color: $pink;
+}
+
+#app{
+  margin-top: 12vh;
+  margin-left: 27vw;
+  background-color: transparent;
+}
+.login-brand {
+  margin: 80px 0 20px;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: $pink;
+  text-align: center;
+}
+
+.card {
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, .05);
+  box-shadow: 0 0 40px rgba(0, 0, 0, .05);
+  background-color: #fff;
+  border-radius: 3px;
+  border: none;
+  position: relative;
+  margin-bottom: 30px;
+  padding: 1vw;
+}
+
+.card.card-primary {
+  border-top: 2px solid $green;
+  background-color: #f1f1f1 !important;
+}
+
+.card .card-header,
+.card .card-footer,
+.card .card-body {
+  background-color: transparent;
+}
+
+.card .card-body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.form-group label {
+  font-weight: 500;
+  color: #181a20;
+  font-family: 'Montserrat';
+  font-size: 1em;
+  letter-spacing: .5px;
+}
+
+.form-control {
+  border: 1px solid #ededed;
+}
+
+.form-control:focus {
+  border-color: $green;
+}
+
+.btn:focus,
+.btn:focus:active,
+.btn:active,
+.btn:hover {
+  background-color: $green !important;
+  border: 1px solid transparent;
+}
+
+button.btn.btn-primary{
+  background-color: $green !important;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 10px 23px;
+  letter-spacing: .4px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  width:100%;
+
+}
+
+.btn:focus,
+.btn:active,
+.btn:active:focus,
+.form-control:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+
+
+label.custom-control-label::after{
+  background-color: $green;
+  color: $green;
+}
+.switch input {
+  display:none;
+}
+.switch {
+  display:inline-block;
+  width:60px;
+  height:30px;
+  margin:8px;
+  transform:translateY(50%);
+  position:relative;
+}
+
+.slider {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  border-radius:30px;
+  box-shadow:0 0 0 2px #777, 0 0 4px #777;
+  cursor:pointer;
+  border:4px solid transparent;
+  overflow:hidden;
+  transition:.4s;
+}
+.slider:before {
+  position:absolute;
+  content:"";
+  width:100%;
+  height:100%;
+  background:#777;
+  border-radius:30px;
+  transform:translateX(-30px);
+  transition:.4s;
+}
+
+input:checked + .slider:before {
+  transform:translateX(30px);
+  background:$green;
+}
+input:checked + .slider {
+  box-shadow:0 0 0 2px $green,0 0 2px $green;
+
+}
+#remember{
+  font-size: 1.2em;
+  color: #000;
+
+}
+#login-marge{
+  margin-bottom: 10%;
+}
+
+/*-------reset mdp -------*/
+
+#resetMdp{
+  width: 80%;
+  margin-left: 10%;
+}
+
+.jumbotron-fluid{
+  padding: 2vw;
+}
+
+input.btn.btn-outline-success.waves-effect{
+  background-color: $green !important;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 10px 23px;
+  letter-spacing: .4px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  width:100%;
+}
+

@@ -1,0 +1,39 @@
+{% extends 'Administration/AdminLayout.html.twig' %}
+
+{% block content %}
+
+    <h2 class="mb-2">Informations pratiques</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Nom de l'info</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for conge in conges %}
+            <tr>
+                <td>{{ conge.typeInfo }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('conges_edit', { 'id': conge.id }) }}">
+                                <button class="btn-success">éditer</button>
+                            </a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('conges_new') }}">
+                <button class="btn-primary">Nouveau</button>
+            </a>
+        </li>
+    </ul>
+{% endblock %}

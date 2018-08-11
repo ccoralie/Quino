@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/carte.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {% for i, image in diapos %}
+                <li data-target="#carousel" data-slide-to="{{ i }}" {% if i==0 %}class="active"{% endif %}></li>
+            {% endfor %}
+        </ol>
+
+        <div class="carousel-inner">
+            {% for i,image in diapos %}
+                <div class="{% if i==0 %}active{% endif %} item">
+                    <img src="{{ vich_uploader_asset(image, 'imageFile') }}"/>
+                </div>
+            {% endfor %}
+        </div>
+
+        <a class="left carousel-control" href="#carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+<div class="container">
+    <h1>LA CARTE</h1>
+    <p id="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis fermentum justo, ornare condimentum massa. Donec non nisi ultricies, porttitor nisi a, molestie ante. Vivamus ornare velit et consectetur ullamcorper. Nunc eget lacinia velit. Sed lorem velit, volutpat at interdum id, rhoncus at tellus. Phasellus aliquam purus nec efficitur porttitor. Proin pulvinar non enim eget bibendum.</p>
+        <div class="row">
+            {% for categorie in categories %}
+            <div class="col-sm-4 ">
+                <h2>{{ categorie.nom }}</h2>
+                {% for carte in categorie.cartes %}
+
+                    <h5>{{ carte.nom }} ({{ carte.origine }})</h5>
+                    <h5>{{ carte.prix }}€</h5>
+                    <p>{{ carte.description }}</p>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+
+</div>
+
+{% endblock %}

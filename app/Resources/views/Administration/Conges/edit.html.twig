@@ -1,0 +1,32 @@
+{% extends 'Administration/AdminLayout.html.twig' %}
+
+{% block content %}
+
+    <h2 class="mb-2">Edition des Horaires</h2>
+
+    {{ form_start(form) }}
+    <label for="">Type d'info</label>
+    {{ form_widget(form.typeInfo) }}
+    {{ form_row(form.texte) }}
+    <div class="row">
+        <div class="col-2">
+            <label>Afficher les congés</label>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="appbundle_conges_actif" name="appbundle_conges[actif]" class="form-check-input" value="1" {% if form.vars.value.actif %}checked{% endif %}>
+            <span class="slider round"></span>
+        </label>
+    </div>
+    {{ form_errors(form.actif) }}
+    {% do form.actif.setRendered %}
+    {{ form_end(form) }}
+
+
+
+{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ asset('build/css/switch.css') }}"
+{% endblock %}
+{% block javascript %}
+    {{ tinymce_init() }}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'Administration/AdminLayout.html.twig' %}
+{% block content %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    <h1>Votre Collection</h1>
+
+    <div class="row">
+        {% for image in diapos %}
+            <div class="col-3 text-center">
+                <img class="img-thumbnail" src="{{ vich_uploader_asset(image, 'imageFile') }}"/>
+                <a href="{{ path('carte_diapo_delete',{'id': image.id}) }}"><button class="btn-danger">Supprimer</button></a>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

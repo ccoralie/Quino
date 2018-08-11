@@ -1,6 +1,6 @@
 /.web-server-pid
 /app/config/parameters.yml
-/build/
+*/build/*
 /phpunit.xml
 /var/*
 !/var/cache
@@ -24,3 +24,9 @@
 /DS_Store/
 
 
+
+src/AppBundle/Tests/\.DS_Store
+
+src/AppBundle/\.DS_Store
+
+src/\.DS_Store
